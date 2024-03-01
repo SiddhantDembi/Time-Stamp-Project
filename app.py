@@ -103,7 +103,7 @@ def delete_latest_entry(table_name):
         st.warning("No entries found to delete.")
 
 def refresh():
-   st.success("Refreshed Successfully.")
+   st.rerun()
    
 def export_table_as_csv():
     st.info("Exporting data to CSV file...")
@@ -130,11 +130,17 @@ def export_raw_table_as_csv():
 if login_page():
     st.title("Date and Time Logger")
     
+    st.write("-" * 30)
+
+    
     if st.button("Refresh"):
         refresh()
         
     if st.button("Save Date and Time"):
         save_current_datetime()
+    
+    st.write("-" * 30)
+
     
     if st.button("Previous Entries"):
         view_previous_entries("data_id")
@@ -143,11 +149,18 @@ if login_page():
     if st.button("Delete Latest Entry"):
         delete_latest_entry("data_id")
     
+    st.write("-" * 30)
+
+    
     if st.button("Previous Raw Entries"):
         view_previous_entries("raw_data_id")
     
     if st.button("Delete Latest Raw Entry"):
         delete_latest_entry("raw_data_id")
+    
+    
+    st.write("-" * 30)
+
     
     if st.button("Export Data"):
         export_table_as_csv()
