@@ -1,0 +1,6 @@
+streamlit
+os
+datetime
+mysql.connector
+pytz
+dotenv
