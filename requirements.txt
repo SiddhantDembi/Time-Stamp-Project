@@ -1,6 +1,3 @@
 streamlit
-os
-datetime
-mysql.connector
+mysql-connector-python
 pytz
-dotenv
